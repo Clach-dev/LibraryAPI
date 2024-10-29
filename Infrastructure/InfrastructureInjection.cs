@@ -31,7 +31,7 @@ namespace Infrastructure
         {
             services.AddScoped<IAuthorRepository, AuthorRepository>();
             services.AddScoped<IBookRepository, BookRepository>();
-            services.AddScoped<IBookUserRepository, BookUserRepository>();
+            services.AddScoped<IReservationRepository, ReservationRepository>();
             services.AddScoped<IGenreRepository, GenreRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
 

@@ -11,13 +11,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="UseCases\AuthorCases\Commands\" />
+    <Folder Include="UseCases\AuthorCases\Queries\" />
     <Folder Include="UseCases\BookCases\Queries\" />
+    <Folder Include="UseCases\ReservationCases\Commands\CreateReservation\" />
+    <Folder Include="UseCases\ReservationCases\Queries\" />
+    <Folder Include="UseCases\GenreCases\Commands\" />
+    <Folder Include="UseCases\GenreCases\Queries\" />
     <Folder Include="UseCases\UserCases\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="MediatR" Version="12.4.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.1.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.1.2" />
+    <PackageReference Include="System.Security.Claims" Version="4.3.0" />
   </ItemGroup>
 
 </Project>

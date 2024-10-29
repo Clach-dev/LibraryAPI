@@ -2,7 +2,7 @@
 
 namespace Application.IRepositories
 {
-    public interface IBookUserRepository : IRepository<BookUser>
+    public interface IReservationRepository : IRepository<Reservation>
     {
     }
 }

@@ -2,30 +2,23 @@
 using Application.IRepositories;
 using AutoMapper;
 using Domain.Entities;
+using Domain.IAlgorithm;
 using MediatR;
 
 namespace Application.UseCases.UserCases.Commands.RegisterUserCase
 {
-    public class RegisterUserHandler : IRequestHandler<RegisterUserCommand, UserReadDto>
+    public class RegisterUserHandler (IUserRepository userRepository, IPasswordHasher passwordHasher, IMapper mapper) : IRequestHandler<RegisterUserCommand, UserReadDto> 
     {
-        private readonly IUserRepository _userRepository;
-        private readonly IMapper _mapper;
-
-        public RegisterUserHandler(IUserRepository userRepository, IMapper mapper)
-        {
-            _userRepository = userRepository;
-            _mapper = mapper; 
-        }
-
         public async Task<UserReadDto> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
         {
-            var newUser = _mapper.Map<User>(request);
+            var newUser = mapper.Map<User>(request);
+            newUser.Password = passwordHasher.HashPassword(request.Password);
+           
+            await userRepository.AddAsync(newUser, cancellationToken);
 
-            await _userRepository.AddAsync(newUser, cancellationToken);
+            await userRepository.SaveChangesAsync(cancellationToken);
 
-            await _userRepository.SaveChangesAsync(cancellationToken);
-
-            return _mapper.Map<UserReadDto>(newUser);
+            return mapper.Map<UserReadDto>(newUser);
         }
     }
 }

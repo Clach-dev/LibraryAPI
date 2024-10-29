@@ -2,7 +2,7 @@
 
 namespace Presentation.Controllers
 {
-    public class BaseController : ControllerBase
+    public abstract class BaseController : ControllerBase
     {
     }
 }
