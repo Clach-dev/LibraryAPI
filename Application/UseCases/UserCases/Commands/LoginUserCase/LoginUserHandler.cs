@@ -1,10 +1,9 @@
-﻿using Application.Dtos;
-using Application.Dtos.Tokens;
+﻿using Application.Dtos.Tokens;
 using Application.Exceptions;
-using Application.IRepositories;
+using Application.Interfaces.IAlgorithm;
+using Application.Interfaces.IRepositories;
 using AutoMapper;
 using Domain.Entities;
-using Domain.IAlgorithm;
 using MediatR;
 
 namespace Application.UseCases.UserCases.Commands.LoginUserCase
@@ -20,12 +19,12 @@ namespace Application.UseCases.UserCases.Commands.LoginUserCase
                 throw new NotFoundException(typeof(User).ToString(), request.Login);
             }
 
-            if(!passwordHasher.VerifyHashedPassword(user.Password, request.Password))
+            if (!passwordHasher.VerifyHashedPassword(user.Password, request.Password))
             {
                 throw new UnauthorizedException("Wrong password");
             }
-            
-            
+
+
         }
     }
 }

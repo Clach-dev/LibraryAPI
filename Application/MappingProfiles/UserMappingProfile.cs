@@ -1,5 +1,4 @@
 ﻿using Application.Dtos;
-using Application.UseCases.UserCases.Commands.LoginUserCase;
 using Application.UseCases.UserCases.Commands.RegisterUserCase;
 using AutoMapper;
 using Domain.Entities;

@@ -10,15 +10,15 @@ namespace Infrastructure.Data.Configurations
         {
             builder
                 .HasKey(book => book.Id);
-            
+
             builder
                 .Property(book => book.ISBN)
                 .IsRequired(true);
-            
+
             builder
                 .Property(book => book.Title)
                 .IsRequired(true);
-            
+
             builder
                 .Property(book => book.Description)
                 .IsRequired(true);
@@ -26,11 +26,11 @@ namespace Infrastructure.Data.Configurations
             builder
                 .HasMany(book => book.Authors)
                 .WithMany(author => author.Books);
-            
+
             builder
                 .HasMany(book => book.Genres)
                 .WithMany(genres => genres.Books);
-            
+
             builder
                 .HasMany(book => book.Reservations)
                 .WithOne(bookUser => bookUser.Book)

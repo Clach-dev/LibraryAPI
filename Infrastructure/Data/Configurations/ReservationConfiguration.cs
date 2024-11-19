@@ -10,11 +10,11 @@ namespace Infrastructure.Data.Configurations
         {
             builder
                 .HasKey(reservation => reservation.Id);
-            
+
             builder
                 .Property(reservation => reservation.ReceiptDate)
                 .IsRequired(true);
-            
+
             builder
                 .Property(reservation => reservation.ReturnDate)
                 .IsRequired(true);
@@ -22,7 +22,7 @@ namespace Infrastructure.Data.Configurations
             builder
                 .HasOne(reservation => reservation.Book)
                 .WithMany(book => book.Reservations);
-            
+
             builder
                 .HasOne(reservation => reservation.User)
                 .WithMany(user => user.Reservations);

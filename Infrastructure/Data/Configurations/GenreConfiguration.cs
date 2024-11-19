@@ -10,11 +10,11 @@ namespace Infrastructure.Data.Configurations
         {
             builder
                 .HasKey(genre => genre.Id);
-            
+
             builder
                 .Property(genre => genre.Name)
                 .IsRequired(true);
-            
+
             builder
                 .Property(genre => genre.Description)
                 .IsRequired(true);

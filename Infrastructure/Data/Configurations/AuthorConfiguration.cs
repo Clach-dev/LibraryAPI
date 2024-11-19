@@ -14,15 +14,15 @@ namespace Infrastructure.Data.Configurations
             builder
                 .Property(author => author.FirstName)
                 .IsRequired(true);
-            
+
             builder
                 .Property(author => author.LastName)
                 .IsRequired(true);
-            
+
             builder
                 .Property(author => author.Patrynomic)
                 .IsRequired(false);
-            
+
             builder
                 .Property(author => author.Description)
                 .IsRequired(true);

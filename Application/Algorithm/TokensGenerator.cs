@@ -12,9 +12,9 @@ namespace Application.Algorithm
     {
         public Token GenerateAccessToken(User user, IEnumerable<string> userRoles)
         {
-            var claims = new List<Claim> 
-            { 
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()) 
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
             };
 
             foreach (var role in userRoles)
@@ -48,6 +48,6 @@ namespace Application.Algorithm
             };
         }
 
-        private T GetJwtSetting<T>(string key) => configuration.GetV<T>($"JwtSettings:{key}");
+        private T GetJwtSetting<T>(string key) => configuration.GetValue<T>($"JwtSettings:{key}");
     }
 }

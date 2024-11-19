@@ -1,4 +1,4 @@
-﻿using Domain.IAlgorithm;
+﻿using Application.Interfaces.IAlgorithm;
 using Microsoft.Extensions.Configuration;
 using System.Security.Cryptography;
 using System.Text;

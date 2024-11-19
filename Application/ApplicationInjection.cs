@@ -15,7 +15,7 @@ namespace Application
 
         private static IServiceCollection AddMapper(this IServiceCollection services)
         {
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());    
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             return services;
         }

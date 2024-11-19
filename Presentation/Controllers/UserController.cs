@@ -12,7 +12,7 @@ namespace Presentation.Controllers
         public async Task<IActionResult> RegisterUser(RegisterUserCommand registerUserCommand, CancellationToken cancellationToken)
         {
             var user = mediator.Send(registerUserCommand, cancellationToken);
-            
+
             return Ok(user);
         }
     }
